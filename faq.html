@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ — Glamify</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="darkmode.css"> 
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #fff0f5, #ffe4ec);
+      color: #333;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 40px;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .logo {
+      font-weight: 600;
+      font-size: 22px;
+      text-decoration: none;
+      color: #000;
+    }
+  
+    .faq-section {
+      width: 100%;
+      min-height: 100vh;
+      padding: 60px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .faq-container {
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .faq-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .faq-header h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .faq-header p {
+      opacity: 0.7;
+    }
+
+    .faq-item {
+      background: white;
+      margin-bottom: 15px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      transition: 0.3s;
+    }
+
+    .faq-item:hover {
+      transform: translateY(-3px);
+    }
+
+    .faq-question {
+      padding: 18px 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 500;
+    }
+
+    .faq-question span {
+      font-size: 20px;
+      transition: 0.3s;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 20px;
+      font-size: 14px;
+      opacity: 0.8;
+      transition: all 0.4s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+      padding: 15px 20px 20px;
+    }
+
+    .faq-item.active span {
+      transform: rotate(45deg);
+    }
+
+    @media (max-width: 768px) {
+      .faq-header h1 {
+        font-size: 28px;
+      }
+
+      .faq-container {
+        padding: 0 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <a class="logo" href="index.html">Glamify</a>
+</nav>
+
+<section class="faq-section">
+  <div class="faq-container">
+
+    <div class="faq-header">
+      <h1>💖 Frequently Asked Questions</h1>
+      <p>Everything you need to know about Glamify</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Are your products 100% authentic?
+        <span>+</span>
+      </div>
+      <div class="faq-answer">
+        Yes, all Glamify products are 100% authentic and sourced from trusted brands.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        How long does delivery take?
+        <span>+</span>
+      </div>
+      <div class="faq-answer">
+        Delivery usually takes 3–5 business days depending on your location.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Can I return products?
+        <span>+</span>
+      </div>
+      <div class="faq-answer">
+        Yes, we offer a 7-day easy return policy for unused products.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Do you offer discounts?
+        <span>+</span>
+      </div>
+      <div class="faq-answer">
+        Yes! Use code <b>GLAMIFY30</b> to get 30% off on your first order.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Which products are best for dry skin?
+        <span>+</span>
+      </div>
+      <div class="faq-answer">
+        Hydrating serums, moisturisers, and vitamin C products work best for dry skin.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const items = document.querySelectorAll(".faq-item");
+
+  items.forEach(item => {
+    item.querySelector(".faq-question").addEventListener("click", () => {
+      item.classList.toggle("active");
+    });
+  });
+</script>
+<script src="darkmode.js"></script>
+</body>
+</html>

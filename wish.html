@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wishlist</title>
+<link rel="stylesheet" href="darkmode.css">
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:linear-gradient(135deg,#fff0f5,#fde8f0);
+}
+
+.header{
+  display:flex;
+  align-items:center;
+  padding:15px 20px;
+  background:white;
+  font-size:20px;
+  font-weight:bold;
+}
+
+.container{
+  width:75%;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:20px;
+  padding:20px 0;
+}
+
+.card{
+  background:white;
+  border-radius:12px;
+  padding:10px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  display:flex;
+  flex-direction:column;
+}
+
+.name{
+  font-size:14px;
+  margin:8px 0;
+}
+
+.price{
+  color:#e60073;
+  font-weight:bold;
+}
+
+.btn{
+  width:100%;
+  margin-top:8px;
+  padding:8px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.move{
+  background:#e60073;
+  color:white;
+}
+
+.remove{
+  background:#eee;
+}
+
+.empty{
+  text-align:center;
+  margin-top:80px;
+  display:none;
+}
+
+.empty h2{
+  color:#e60073;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="header">💖 Wishlist</div>
+
+<div id="wishlist" class="container"></div>
+
+<div id="empty" class="empty">
+  <h2>Your Wishlist is Empty 💗</h2>
+  <p>Add your favourite products here</p>
+  <button onclick="shop()">Start Shopping</button>
+</div>
+
+<script>
+
+function getWishlist(){
+  return JSON.parse(localStorage.getItem("glamify_wishlist")) || [];
+}
+
+function saveWishlist(data){
+  localStorage.setItem("glamify_wishlist", JSON.stringify(data));
+}
+
+function loadWishlist(){
+  let data = getWishlist();
+  let container = document.getElementById("wishlist");
+
+  container.innerHTML = "";
+
+  if(data.length === 0){
+    container.style.display = "none";
+    document.getElementById("empty").style.display = "block";
+    return;
+  }
+
+  data.forEach((item, index) => {
+
+    let card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+      <div class="name">${item.name}</div>
+      <div class="price">₹${item.price}</div>
+      <button class="btn move" onclick="moveToCart(${index})">Move to Bag</button>
+      <button class="btn remove" onclick="removeItem(${index})">Remove</button>
+    `;
+
+    container.appendChild(card);
+  });
+}
+
+function removeItem(index){
+  let data = getWishlist();
+  data.splice(index,1);
+  saveWishlist(data);
+  loadWishlist();
+}
+
+function moveToCart(index){
+  let wishlist = getWishlist();
+  let cart = JSON.parse(localStorage.getItem("glamify_cart")) || [];
+
+  let item = wishlist[index];
+
+  let existing = cart.find(p => p.name === item.name);
+
+  if(existing){
+    existing.qty += 1;
+  } else {
+    cart.push({name:item.name, price:item.price, qty:1});
+  }
+
+  localStorage.setItem("glamify_cart", JSON.stringify(cart));
+
+  wishlist.splice(index,1);
+  saveWishlist(wishlist);
+
+  loadWishlist();
+}
+
+function shop(){
+  window.location.href = "shop.html";
+}
+
+loadWishlist();
+
+</script>
+<script src="darkmode.js"></script>
+</body>
+</html>

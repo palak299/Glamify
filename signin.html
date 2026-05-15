@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Create Account</title>
+
+<style>
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #ffd6e8; 
+  --text: #000;
+  --border: #ccc;
+  --accent: #ff6fa5;
+}
+
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+label {
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input, select, textarea {
+  font-size: 1.05rem;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #777;
+}
+
+textarea {
+  min-height: 90px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 14px;
+  width: 100%;
+  background: var(--accent);
+  color: white;
+  border: none;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button:hover {
+  background: #ff4f9a;
+}
+
+#msg{
+  margin-top:15px;
+  text-align:center;
+  font-weight:bold;
+}
+
+/* darkmode */
+body {
+  background: #fff5f8;
+  color: #120009;
+}
+html.dark body        { 
+  background: #120009; color: #f0d8e8; }
+html.dark nav         { 
+  background: #1a0010; }
+html.dark .prod-card,
+html.dark .card,
+html.dark .acard,
+html.dark .vcard,
+html.dark .faq-item,
+html.dark .review-card,
+html.dark .contact-box,
+html.dark .cart-item,
+html.dark .container,
+html.dark .login-container { 
+  background: #220015; border-color: #3a0025; }
+html.dark input,
+html.dark textarea,
+html.dark select      { 
+  background: #2a0a1a; color: #f0d8e8; border-color: #3a0025; }
+html.dark section,
+html.dark footer      { 
+  background: #1a0010; }
+
+* {
+   transition: background 0.3s, color 0.3s; }
+#theme-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: #e8357a;
+  font-size: 22px;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Create Account</h1>
+
+  <form id="signupForm">
+
+    <div class="field">
+      <label>First Name *</label>
+      <input type="text" id="fname" required placeholder="Jane">
+    </div>
+
+    <div class="field">
+      <label>Middle Name (Optional)</label>
+      <input type="text" placeholder="Elizabeth">
+    </div>
+
+    <div class="field">
+      <label>Last Name *</label>
+      <input type="text" id="lname" required placeholder="Doe">
+    </div>
+
+    <div class="field">
+      <label>Email *</label>
+      <input type="email" id="email" required placeholder="jane@example.com">
+    </div>
+
+    <div class="field">
+      <label>Phone *</label>
+      <input type="tel" id="phone" required placeholder="9876543210">
+    </div>
+
+    <div class="field">
+      <label>Date of Birth</label>
+      <input type="date">
+    </div>
+    <div class="field">
+      <label>Password *</label>
+      <input type="password" id="password" required placeholder="Enter password">
+    </div>
+
+    <div class="field">
+      <label>Confirm Password *</label>
+      <input type="password" id="confirmPassword" required placeholder="Confirm password">
+    </div>
+
+    <div class="field">
+  <label>Country *</label>
+
+  <select id="country" required>
+    <option value="">Select</option>
+    <option>India</option>
+    <option>USA</option>
+  </select>
+</div>
+
+    <div class="field">
+      <label>Bio</label>
+      <textarea placeholder="Tell about yourself"></textarea>
+    </div>
+    <button type="submit">Create Account</button>
+    <p id="msg"></p>
+  </form>
+</div>
+</body>
+<script src="darkmode.js"></script>
+<script src="signin.js"></script>
+</html>

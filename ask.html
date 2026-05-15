@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Glow Quiz</title>
+
+
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'DM Sans', sans-serif;
+}
+
+body{
+  background:#fff5f7;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+.card{
+  width:90%;
+  max-width:450px;
+  background:#fff;
+  padding:40px 30px;
+  border-radius:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  text-align:center;
+}
+
+h1{
+  font-family:'Playfair Display', serif;
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+h1 span{
+  color:#f33b72;
+}
+
+.sub{
+  font-size:14px;
+  color:#777;
+  margin-bottom:25px;
+  line-height:1.5;
+}
+
+.info{
+  display:flex;
+  justify-content:space-between;
+  margin:20px 0;
+  font-size:13px;
+  color:#555;
+}
+
+.info div{
+  text-align:center;
+}
+
+.tags{
+  margin:20px 0;
+}
+
+.tags span{
+  display:inline-block;
+  background:#ffe4ec;
+  color:#a85c74;
+  padding:6px 12px;
+  border-radius:20px;
+  font-size:13px;
+  margin:4px;
+}
+
+button{
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:15px;
+}
+
+.start{
+  background:#e8638c;
+  color:#fff;
+}
+
+.start:hover{
+  background:#d14c74;
+}
+
+.later{
+  background:none;
+  color:#888;
+}
+
+.later:hover{
+  text-decoration:underline;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <h1>Find your <span>perfect glow</span></h1>
+
+  <p class="sub">
+    Answer a few simple questions about your skin and hair.
+    We'll suggest products that suit you best.
+  </p>
+
+  <div class="info">
+    <div>
+      <strong>6</strong><br>Questions
+    </div>
+    <div>
+      <strong>2 min</strong><br>Time
+    </div>
+    <div>
+      <strong>100%</strong><br>Personal
+    </div>
+  </div>
+
+  <div class="tags">
+    <span>Skin type</span>
+    <span>Hair care</span>
+    <span>Hydration</span>
+    <span>Concerns</span>
+  </div>
+
+  <button class="start" onclick="location.href='quiz.html'">
+    Start Quiz →
+  </button>
+
+  <button class="later" onclick="location.href='index.html'">
+    Maybe later
+  </button>
+
+</div>
+
+</body>
+</html>

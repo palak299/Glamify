@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop — GLAMIFY</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">Glamify</a>
+  <div class="nav-menu">
+    <a class="nav-link" href="index.html">Home</a>
+    <a class="nav-link active" href="shop.html">Shop</a>
+    <a class="nav-link" href="about.html">About</a>
+    <a class="nav-link" href="contact.html">Contact</a>
+    <a class="nav-cta" href="cart.html">🛒 Cart</a>
+    <a class="nav-cta" href="wish.html">Wishlist</a>
+  </div>
+</nav>
+
+<div class="shop-top">
+  <h1>The Glamify Vault 💎</h1>
+  <p>Luxury beauty, curated for every era of you</p>
+</div>
+
+<div class="filter-bar">
+  <button class="filt on" id="filt-makeup"    onclick="filterCat('makeup',this)">🌸 Makeup</button>
+  <button class="filt"    id="filt-skincare"  onclick="filterCat('skincare',this)">✨ Skincare</button>
+  <button class="filt"    id="filt-haircare"  onclick="filterCat('haircare',this)">💇‍♀️ Haircare</button>
+  <button class="filt"    id="filt-fragrance" onclick="filterCat('fragrance',this)">🌙 Fragrance</button>
+</div>
+
+  <div class="shop-section" id="ss-makeup">
+    <div style="padding:30px 6% 0 6%"><div class="shop-cat-title">🌸 Makeup</div></div>
+    <div class="shop-grid" style="padding:0 6% 40px">
+      <div class="prod-card"><span class="prod-badge badge-new">New</span><div class="prod-img"><img src="https://i.pinimg.com/474x/e8/6f/d7/e86fd7d5c89b72ada65192e3b19b6bae.jpg" alt="Foundation"></div><div class="prod-body"><div class="prod-name">HD Foundation</div><div class="prod-desc">Full coverage, 24hr wear</div><div class="prod-price-row"><span class="prod-price">₹899</span><span class="prod-old">₹1,299</span></div><button class="add-btn" onclick="cart('HD Foundation')">Add to Cart</button></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPvy1bt4Ky-hC7fDpVcVYLm7jsY1giJRU2SQ&s" alt="Pencil"></div><div class="prod-body"><div class="prod-name">Dual-ended Pencil</div><div class="prod-desc">Liner & brow perfector</div><div class="prod-price-row"><span class="prod-price">₹599</span></div><button class="add-btn" onclick="cart('Dual-ended Pencil')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-hot">Hot</span><div class="prod-img"><img src="https://media.istockphoto.com/id/1370468785/photo/a-nude-eyeshadow-palette-and-makeup-artists-tools-on-a-marble-vanity-brushes-for-powder-blush.jpg?s=612x612&w=0&k=20&c=8K-VjKOtdomupO_HDwhOmVe3KNKGwquUVMzq9bbLi7Q=" alt="Eyeshadow"></div><div class="prod-body"><div class="prod-name">Nude Eyeshadow Palette</div><div class="prod-desc">18 blendable shades</div><div class="prod-price-row"><span class="prod-price">₹399</span><span class="prod-old">₹699</span></div><button class="add-btn" onclick="cart('Eyeshadow Palette')">Add to Cart</button></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://i.pinimg.com/originals/b4/b4/b1/b4b4b10f8eb1da07a2f1f3e562755433.jpg" alt="Lipstick"></div><div class="prod-body"><div class="prod-name">Velvet Matte Lipstick</div><div class="prod-desc">Long-lasting rich colour</div><div class="prod-price-row"><span class="prod-price">₹299</span><span class="prod-old">₹499</span></div><button class="add-btn" onclick="cart('Velvet Matte Lipstick')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-new">New</span><div class="prod-img"><img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:540/1146339/I2-tRTIhi-1146339_1.jpg" alt="Blush"></div><div class="prod-body"><div class="prod-name">Glow Blush</div><div class="prod-desc">Buildable peachy blush</div><div class="prod-price-row"><span class="prod-price">₹349</span></div><button class="add-btn" onclick="cart('Glow Blush')">Add to Cart</button></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://www.gosupps.com/media/catalog/product/cache/25/small_image/1500x1650/9df78eab33525d08d6e5fb8d27136e95/5/1/51GV32f-WrL.jpg" alt="Highlighter"></div><div class="prod-body"><div class="prod-name">Diamond Highlighter</div><div class="prod-desc">Blinding shimmer finish</div><div class="prod-price-row"><span class="prod-price">₹449</span><span class="prod-old">₹699</span></div><button class="add-btn" onclick="cart('Diamond Highlighter')">Add to Cart</button></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=400" alt="Concealer"></div><div class="prod-body"><div class="prod-name">Full Cover Concealer</div><div class="prod-desc">Hides dark circles instantly</div><div class="prod-price-row"><span class="prod-price">₹499</span></div><button class="add-btn" onclick="cart('Full Cover Concealer')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-sale">Sale</span><div class="prod-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUPq0AfgUHtcOVCq9MWsr2YJRvkidDgvBZ7Q&s" alt="Mascara"></div><div class="prod-body"><div class="prod-name">Lash Boss Mascara</div><div class="prod-desc">Volumising & curling</div><div class="prod-price-row"><span class="prod-price">₹399</span><span class="prod-old">₹599</span></div><button class="add-btn" onclick="cart('Lash Boss Mascara')">Add to Cart</button></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://m.media-amazon.com/images/I/61JbGXG0EnL._AC_UF1000,1000_QL80_.jpg" alt="Setting Spray"></div><div class="prod-body"><div class="prod-name">Setting Spray</div><div class="prod-desc">Lock makeup all day</div><div class="prod-price-row"><span class="prod-price">₹649</span></div><button class="add-btn" onclick="cart('Setting Spray')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-new">New</span><div class="prod-img"><img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000000493712629/PSoGfqKus-000000000493712629_1.jpg" alt="Lip Gloss"></div><div class="prod-body"><div class="prod-name">Crystal Lip Gloss</div><div class="prod-desc">Plumping glossy finish</div><div class="prod-price-row"><span class="prod-price">₹249</span></div><button class="add-btn" onclick="cart('Crystal Lip Gloss')">Add to Cart</button></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=400" alt="Brush Set"></div><div class="prod-body"><div class="prod-name">Pro Brush Set</div><div class="prod-desc">12-piece professional kit</div><div class="prod-price-row"><span class="prod-price">₹1,299</span><span class="prod-old">₹1,999</span></div><button class="add-btn" onclick="cart('Pro Brush Set')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-hot">Hot</span><div class="prod-img"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400" alt="Contour Kit"></div><div class="prod-body"><div class="prod-name">Sculpt & Contour Kit</div><div class="prod-desc">Defines & highlights</div><div class="prod-price-row"><span class="prod-price">₹799</span><span class="prod-old">₹1,199</span></div><button class="add-btn" onclick="cart('Sculpt Contour Kit')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-new">New</span><div class="prod-img"><img src="https://www.ecoberry.in/cdn/shop/files/organic-tinted-moisturizer-299468.png?v=1745689013" alt="Tinted Moisturiser"></div><div class="prod-body"><div class="prod-name">Tinted Moisturiser</div><div class="prod-desc">Sheer coverage + SPF 30</div><div class="prod-price-row"><span class="prod-price">₹699</span></div><button class="add-btn" onclick="cart('Tinted Moisturiser')">Add to Cart</button></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000000493724641/4VvmUo2Y7o-000000000493724641_1.png" alt="Primer"></div><div class="prod-body"><div class="prod-name">Pore Minimising Primer</div><div class="prod-desc">Smooth skin for flawless base</div><div class="prod-price-row"><span class="prod-price">₹549</span><span class="prod-old">₹799</span></div><button class="add-btn" onclick="cart('Pore Minimising Primer')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-sale">Sale</span><div class="prod-img"><img src="https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/lag/lag65721/y/5.jpg" alt="Lip Liner"></div><div class="prod-body"><div class="prod-name">Precision Lip Liner</div><div class="prod-desc">Define & fill with ease</div><div class="prod-price-row"><span class="prod-price">₹199</span><span class="prod-old">₹349</span></div><button class="add-btn" onclick="cart('Precision Lip Liner')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-new">New</span><div class="prod-img"><img src="https://static.beautytocare.com/cdn-cgi/image/width=1600,height=1600,f=auto/media/catalog/product//f/l/flormar-tinted-brow-gel-03-brown-4-8ml_1.jpg" alt="Brow Gel"></div><div class="prod-body"><div class="prod-name">Tinted Brow Gel</div><div class="prod-desc">Defined bold brows all day</div><div class="prod-price-row"><span class="prod-price">₹329</span></div><button class="add-btn" onclick="cart('Tinted Brow Gel')">Add to Cart</button></div></div>
+    </div>
+  </div>
+
+  <div class="shop-section hidden" id="ss-skincare">
+    <div style="padding:30px 6% 0 6%"><div class="shop-cat-title">✨ Skincare</div></div>
+    <div class="shop-grid" style="padding:0 6% 40px">
+      <div class="prod-card"><span class="prod-badge badge-new">New</span><div class="prod-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9ZbcD7xq5AUXJ5u1SrQJyG3K7KJqVCY1j6Q&s" alt="Serum"></div><div class="prod-body"><div class="prod-name">Vitamin C Serum</div><div class="prod-desc">Brightens & evens skin tone</div><div class="prod-price-row"><span class="prod-price">₹1,199</span><span class="prod-old">₹1,699</span></div><button class="add-btn" onclick="cart('Vitamin C Serum')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-hot">Hot</span><div class="prod-img"><img src="https://aqualogica.in/cdn/shop/files/1_8d797483-8cdc-4d99-9a42-49972639c3cd.jpg?v=1739731583&width=1200" alt="Moisturiser"></div><div class="prod-body"><div class="prod-name">Glow Moisturiser</div><div class="prod-desc">48hr hydration boost</div><div class="prod-price-row"><span class="prod-price">₹799</span><span class="prod-old">₹1,200</span></div><button class="add-btn" onclick="cart('Glow Moisturiser')">Add to Cart</button></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://brownliving.in/cdn/shop/files/kumkumadi-face-mask-30gm-brightening-nourishing-skincare-kumfm015-remembher-3740862.jpg?v=1768901536" alt="Face Mask"></div><div class="prod-body"><div class="prod-name">Rose Clay Mask</div><div class="prod-desc">Detox & deep cleanse</div><div class="prod-price-row"><span class="prod-price">₹499</span></div><button class="add-btn" onclick="cart('Rose Clay Mask')">Add to Cart</button></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://images-cdn.ubuy.co.in/66883af503847360af6cdd22-aesthetic-hydration-cosmetics.jpg" alt="Toner"></div><div class="prod-body"><div class="prod-name">Hydrating Toner</div><div class="prod-desc">Balances & preps skin</div><div class="prod-price-row"><span class="prod-price">₹649</span></div><button class="add-btn" onclick="cart('Hydrating Toner')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-new">New</span><div class="prod-img"><img src="https://beminimalist.co/cdn/shop/files/KRetinalNew.png?v=1721632054" alt="Eye Cream"></div><div class="prod-body"><div class="prod-name">Retinol Eye Cream</div><div class="prod-desc">Reduces dark circles & puffiness</div><div class="prod-price-row"><span class="prod-price">₹899</span><span class="prod-old">₹1,299</span></div><button class="add-btn" onclick="cart('Retinol Eye Cream')">Add to Cart</button></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://www.nandiniorganic.com/cdn/shop/files/3_55c7210f-c166-451d-b16a-249c140c42ea_1120x.png?v=1711964378" alt="SPF"></div><div class="prod-body"><div class="prod-name">SPF 60 Sunscreen</div><div class="prod-desc">Lightweight PA++++ protection</div><div class="prod-price-row"><span class="prod-price">₹549</span></div><button class="add-btn" onclick="cart('SPF 60 Sunscreen')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-sale">Sale</span><div class="prod-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5Z2AcAi_W99VqtdEdetOFd1ztjGPtuJ6YfA&s" alt="Exfoliator"></div><div class="prod-body"><div class="prod-name">AHA BHA Exfoliator</div><div class="prod-desc">Smooth & refine texture</div><div class="prod-price-row"><span class="prod-price">₹749</span><span class="prod-old">₹999</span></div><button class="add-btn" onclick="cart('AHA BHA Exfoliator')">Add to Cart</button></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://i.etsystatic.com/5984462/r/il/22e26c/6397954348/il_fullxfull.6397954348_8os8.jpg" alt="Face Mist"></div><div class="prod-body"><div class="prod-name">Rose Water Face Mist</div><div class="prod-desc">Refresh & soothe anytime</div><div class="prod-price-row"><span class="prod-price">₹349</span></div><button class="add-btn" onclick="cart('Rose Water Mist')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-new">New</span><div class="prod-img"><img src="https://smytten-image.gumlet.io/shop_item/CEV011AA1011.jpg" alt="Sheet Mask"></div><div class="prod-body"><div class="prod-name">Gold Sheet Mask</div><div class="prod-desc">24K glow in 20 mins</div><div class="prod-price-row"><span class="prod-price">₹199</span></div><button class="add-btn" onclick="cart('Gold Sheet Mask')">Add to Cart</button></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOep2k_UcsKkvmvbuAbNceyv8TE01tX44StA&s" alt="Night Cream"></div><div class="prod-body"><div class="prod-name">Repair Night Cream</div><div class="prod-desc">Nourish while you sleep</div><div class="prod-price-row"><span class="prod-price">₹1,099</span><span class="prod-old">₹1,499</span></div><button class="add-btn" onclick="cart('Repair Night Cream')">Add to Cart</button></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://images-static.nykaa.com/media/catalog/product/a/6/a6ef273DECON00000122_1x.jpg?tr=w-500" alt="Lip Balm"></div><div class="prod-body"><div class="prod-name">Tinted Lip Balm SPF</div><div class="prod-desc">Colour + sun protection</div><div class="prod-price-row"><span class="prod-price">₹249</span></div><button class="add-btn" onclick="cart('Tinted Lip Balm')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-hot">Hot</span><div class="prod-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFESy5nqoE1AZwhmFPSPEIdHMidG0XnG6D7Q&s" alt="Face Oil"></div><div class="prod-body"><div class="prod-name">Bakuchiol Face Oil</div><div class="prod-desc">Natural retinol alternative</div><div class="prod-price-row"><span class="prod-price">₹1,399</span><span class="prod-old">₹1,999</span></div><button class="add-btn" onclick="cart('Bakuchiol Face Oil')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-new">New</span><div class="prod-img"><img src="https://suganda.co/cdn/shop/files/10_Niacinamide_Serum_L4_1280x.jpg?v=1753698326" alt="Niacinamide"></div><div class="prod-body"><div class="prod-name">10% Niacinamide Serum</div><div class="prod-desc">Minimises pores & dark spots</div><div class="prod-price-row"><span class="prod-price">₹849</span><span class="prod-old">₹1,199</span></div><button class="add-btn" onclick="cart('Niacinamide Serum')">Add to Cart</button></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://skinfunctional.com/cdn/shop/files/sf-micellar-15ml.png?v=1755778480&width=1200" alt="Micellar Water"></div><div class="prod-body"><div class="prod-name">Micellar Cleansing Water</div><div class="prod-desc">Gentle makeup remover</div><div class="prod-price-row"><span class="prod-price">₹399</span></div><button class="add-btn" onclick="cart('Micellar Cleansing Water')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-sale">Sale</span><div class="prod-img"><img src="https://cdn.shopify.com/s/files/1/0051/7868/7599/files/Hydragel_Eye_Patches_Pink_1.jpg?v=1745835519" alt="Under Eye Patches"></div><div class="prod-body"><div class="prod-name">Collagen Eye Patches</div><div class="prod-desc">De-puff & brighten eyes</div><div class="prod-price-row"><span class="prod-price">₹299</span><span class="prod-old">₹449</span></div><button class="add-btn" onclick="cart('Collagen Eye Patches')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-new">New</span><div class="prod-img"><img src="https://dermafirmshop.com/cdn/shop/files/4_7dec33e9-d360-43d1-8329-df038d63f8be.jpg?v=1697437890&width=1500" alt="Peptide Cream"></div><div class="prod-body"><div class="prod-name">Peptide Firming Cream</div><div class="prod-desc">Lifts & tightens skin</div><div class="prod-price-row"><span class="prod-price">₹1,599</span><span class="prod-old">₹2,199</span></div><button class="add-btn" onclick="cart('Peptide Firming Cream')">Add to Cart</button></div></div>
+    </div>
+  </div>
+
+  <div class="shop-section hidden" id="ss-haircare">
+    <div style="padding:30px 6% 0 6%"><div class="shop-cat-title">💇‍♀️ Haircare</div></div>
+    <div class="shop-grid" style="padding:0 6% 40px">
+      <div class="prod-card"><div class="prod-img"><img src="https://5.imimg.com/data5/SELLER/Default/2023/11/362845891/AM/KE/VN/3074232/ayurvedic-hair-conditioners-500x500.jpg" alt="Hair Oil"></div><div class="prod-body"><div class="prod-name">Ayurvedic Hair Oil</div><div class="prod-desc">Strengthens roots & reduces hairfall</div><div class="prod-price-row"><span class="prod-price">₹499</span></div><button class="add-btn" onclick="cart('Ayurvedic Hair Oil')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-new">New</span><div class="prod-img"><img src="https://i.pinimg.com/736x/34/b8/7c/34b87c3f43591dc9656630ca27b46f5d.jpg" alt="Cleansing Duo"></div><div class="prod-body"><div class="prod-name">Cleansing Duo</div><div class="prod-desc">Shampoo + conditioner set</div><div class="prod-price-row"><span class="prod-price">₹1,299</span><span class="prod-old">₹1,799</span></div><button class="add-btn" onclick="cart('Cleansing Duo')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-hot">Hot</span><div class="prod-img"><img src="https://i.guim.co.uk/img/media/ab3c3ff81bffba525c5a4e197eb7aa93bd96720c/594_0_1678_1680/master/1678.jpg?width=445&dpr=1&s=none&crop=none" alt="Hair Mask"></div><div class="prod-body"><div class="prod-name">Deep Repair Hair Mask</div><div class="prod-desc">Intense moisture treatment</div><div class="prod-price-row"><span class="prod-price">₹899</span><span class="prod-old">₹1,299</span></div><button class="add-btn" onclick="cart('Deep Repair Hair Mask')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-new">New</span><div class="prod-img"><img src="https://www.ktprofessional.com/cdn/shop/files/OrganicOnionHairSerum-100ml_6.jpg?v=1763361557&width=1500" alt="Serum"></div><div class="prod-body"><div class="prod-name">Onion Hair Serum</div><div class="prod-desc">Anti-hairfall growth booster</div><div class="prod-price-row"><span class="prod-price">₹1,999</span><span class="prod-old">₹2,500</span></div><button class="add-btn" onclick="cart('Onion Hair Serum')">Add to Cart</button></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://m.media-amazon.com/images/I/51L175+EgfL.jpg" alt="Heat Protectant"></div><div class="prod-body"><div class="prod-name">Heat Protectant Spray</div><div class="prod-desc">Shield up to 230°C</div><div class="prod-price-row"><span class="prod-price">₹649</span></div><button class="add-btn" onclick="cart('Heat Protectant Spray')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-sale">Sale</span><div class="prod-img"><img src="https://images.unsplash.com/photo-1519735777090-ec97162dc266?w=400" alt="Dry Shampoo"></div><div class="prod-body"><div class="prod-name">Invisible Dry Shampoo</div><div class="prod-desc">Instant refresh, no residue</div><div class="prod-price-row"><span class="prod-price">₹449</span><span class="prod-old">₹699</span></div><button class="add-btn" onclick="cart('Dry Shampoo')">Add to Cart</button></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://xcdn.next.co.uk/common/items/default/default/itemimages/3_4Ratio/product/lge/AF0413s4.jpg?im=Resize,width=750" alt="Scalp Scrub"></div><div class="prod-body"><div class="prod-name">Scalp Detox Scrub</div><div class="prod-desc">Exfoliates & balances scalp</div><div class="prod-price-row"><span class="prod-price">₹749</span></div><button class="add-btn" onclick="cart('Scalp Detox Scrub')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-new">New</span><div class="prod-img"><img src="https://ashbabotanics.com/cdn/shop/files/2000x2000_4014717a-9926-4c3f-a52e-e9b947ffd08f.png?v=1726754636&width=1500" alt="Leave-in"></div><div class="prod-body"><div class="prod-name">Leave-in Conditioner</div><div class="prod-desc">Frizz control all day</div><div class="prod-price-row"><span class="prod-price">₹549</span><span class="prod-old">₹799</span></div><button class="add-btn" onclick="cart('Leave-in Conditioner')">Add to Cart</button></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://www.buddhanatural.com/cdn/shop/files/antigreyhairmistmainimagewithbox_1.jpg?v=1704887014" alt="Hair Perfume"></div><div class="prod-body"><div class="prod-name">Hair Perfume Mist</div><div class="prod-desc">Fragrant & nourishing</div><div class="prod-price-row"><span class="prod-price">₹399</span></div><button class="add-btn" onclick="cart('Hair Perfume Mist')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-hot">Hot</span><div class="prod-img"><img src="https://m.media-amazon.com/images/I/716mNiEGmnL._AC_UF1000,1000_QL80_.jpg" alt="Protein Pack"></div><div class="prod-body"><div class="prod-name">Keratin Protein Pack</div><div class="prod-desc">Salon-quality at home</div><div class="prod-price-row"><span class="prod-price">₹1,499</span><span class="prod-old">₹2,199</span></div><button class="add-btn" onclick="cart('Keratin Protein Pack')">Add to Cart</button></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMz8L7wxaW0W31OG4G7UN510YnJ17t4FtIzA&s" alt="Shine Gloss"></div><div class="prod-body"><div class="prod-name">Shine Gloss Treatment</div><div class="prod-desc">Mirror-like shine boost</div><div class="prod-price-row"><span class="prod-price">₹849</span></div><button class="add-btn" onclick="cart('Shine Gloss Treatment')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-new">New</span><div class="prod-img"><img src="https://5.imimg.com/data5/ECOM/Default/2024/2/390712212/KS/WO/NP/213691705/7417643273-04492d16-0d44-41ce-91e1-4b2307be501b-500x500.jpg" alt="Biotin Spray"></div><div class="prod-body"><div class="prod-name">Biotin Growth Spray</div><div class="prod-desc">Stimulates new hair growth</div><div class="prod-price-row"><span class="prod-price">₹999</span><span class="prod-old">₹1,399</span></div><button class="add-btn" onclick="cart('Biotin Growth Spray')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-sale">Sale</span><div class="prod-img"><img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400" alt="Argan Oil"></div><div class="prod-body"><div class="prod-name">Pure Argan Oil</div><div class="prod-desc">Smooths & adds intense shine</div><div class="prod-price-row"><span class="prod-price">₹1,199</span><span class="prod-old">₹1,699</span></div><button class="add-btn" onclick="cart('Pure Argan Oil')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-new">New</span><div class="prod-img"><img src="https://mumuso.co.in/cdn/shop/files/Nourishing-Rice-Water-Shampoo-for-Hair-Repair-and-Growth-Mumuso-6364.jpg?v=1749019472&width=1100" alt="Rice Water Shampoo"></div><div class="prod-body"><div class="prod-name">Rice Water Shampoo</div><div class="prod-desc">Strengthens & lengthens</div><div class="prod-price-row"><span class="prod-price">₹599</span></div><button class="add-btn" onclick="cart('Rice Water Shampoo')">Add to Cart</button></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpofiuoM9qg1SnvIku_rRd8kaIDac6RxWriA&s" alt="Castor Oil"></div><div class="prod-body"><div class="prod-name">Black Castor Oil</div><div class="prod-desc">Edge control & thickness</div><div class="prod-price-row"><span class="prod-price">₹699</span><span class="prod-old">₹999</span></div><button class="add-btn" onclick="cart('Black Castor Oil')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-hot">Hot</span><div class="prod-img"><img src="https://m.media-amazon.com/images/I/71t60pwfsiL._AC_UF1000,1000_QL80_.jpg" alt="Scalp Serum"></div><div class="prod-body"><div class="prod-name">Scalp Revival Serum</div><div class="prod-desc">Nourishes hair follicles</div><div class="prod-price-row"><span class="prod-price">₹1,099</span><span class="prod-old">₹1,499</span></div><button class="add-btn" onclick="cart('Scalp Revival Serum')">Add to Cart</button></div></div>
+    </div>
+  </div>
+
+  <div class="shop-section hidden" id="ss-fragrance">
+    <div style="padding:30px 6% 0 6%"><div class="shop-cat-title">🌙 Fragrance</div></div>
+    <div class="shop-grid" style="padding:0 6% 40px">
+      <div class="prod-card"><span class="prod-badge badge-new">New</span><div class="prod-img"><img src="https://thumbs.dreamstime.com/b/transparent-glass-bottle-perfume-colourful-background-luxurious-mockup-transparent-glass-bottle-perfume-colourful-326998591.jpg" alt="Soft Girly"></div><div class="prod-body"><div class="prod-name">Soft Girly EDP</div><div class="prod-desc">Sweet florals & vanilla musk</div><div class="prod-price-row"><span class="prod-price">₹499</span></div><button class="add-btn" onclick="cart('Soft Girly EDP')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-hot">Hot</span><div class="prod-img"><img src="https://img.freepik.com/premium-photo/perfume-bottle-no-logo-realistic-isolated-white-backgroundgenerative-ai_760510-6152.jpg?w=2000" alt="Elegance"></div><div class="prod-body"><div class="prod-name">Elegance EDP</div><div class="prod-desc">White rose & oud accord</div><div class="prod-price-row"><span class="prod-price">₹1,299</span><span class="prod-old">₹1,799</span></div><button class="add-btn" onclick="cart('Elegance EDP')">Add to Cart</button></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://images8.alphacoders.com/392/392122.jpg" alt="Classy"></div><div class="prod-body"><div class="prod-name">Classy Noir</div><div class="prod-desc">Dark woody amber</div><div class="prod-price-row"><span class="prod-price">₹899</span></div><button class="add-btn" onclick="cart('Classy Noir')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-luxe">💎 Luxe</span><div class="prod-img"><img src="https://fimgs.net/images/perfume/social.8747.jpg" alt="Diva"></div><div class="prod-body"><div class="prod-name">Diva Eau de Parfum</div><div class="prod-desc">Bold saffron & rose attar</div><div class="prod-price-row"><span class="prod-price">₹1,999</span><span class="prod-old">₹2,800</span></div><button class="add-btn" onclick="cart('Diva EDP')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-new">New</span><div class="prod-img"><img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=400" alt="Midnight"></div><div class="prod-body"><div class="prod-name">Midnight Bloom</div><div class="prod-desc">Jasmine & patchouli accord</div><div class="prod-price-row"><span class="prod-price">₹1,499</span></div><button class="add-btn" onclick="cart('Midnight Bloom')">Add to Cart</button></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://m.media-amazon.com/images/I/51JSwcfyMcL.jpg" alt="Rosé"></div><div class="prod-body"><div class="prod-name">Rosé All Day</div><div class="prod-desc">Peach, rose & pink pepper</div><div class="prod-price-row"><span class="prod-price">₹799</span><span class="prod-old">₹1,199</span></div><button class="add-btn" onclick="cart('Rosé All Day')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-sale">Sale</span><div class="prod-img"><img src="https://images.meesho.com/images/products/654534518/wtcgv_512.webp?width=512" alt="Citrus Fresh"></div><div class="prod-body"><div class="prod-name">Citrus Fresh EDT</div><div class="prod-desc">Zesty bergamot & green tea</div><div class="prod-price-row"><span class="prod-price">₹599</span><span class="prod-old">₹899</span></div><button class="add-btn" onclick="cart('Citrus Fresh EDT')">Add to Cart</button></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://m.media-amazon.com/images/I/61fW+1K9p0L._AC_UF350,350_QL80_.jpg" alt="Velvet Oud"></div><div class="prod-body"><div class="prod-name">Velvet Oud Intense</div><div class="prod-desc">Rich oriental accord</div><div class="prod-price-row"><span class="prod-price">₹2,499</span></div><button class="add-btn" onclick="cart('Velvet Oud Intense')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-new">New</span><div class="prod-img"><img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=400" alt="Cloud Nine"></div><div class="prod-body"><div class="prod-name">Cloud Nine</div><div class="prod-desc">Dreamy musk & coconut</div><div class="prod-price-row"><span class="prod-price">₹949</span><span class="prod-old">₹1,399</span></div><button class="add-btn" onclick="cart('Cloud Nine')">Add to Cart</button></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=400" alt="Body Mist"></div><div class="prod-body"><div class="prod-name">Glam Body Mist 250ml</div><div class="prod-desc">All-day freshness</div><div class="prod-price-row"><span class="prod-price">₹399</span></div><button class="add-btn" onclick="cart('Glam Body Mist')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-hot">Hot</span><div class="prod-img"><img src="https://cdn11.bigcommerce.com/s-ilgxsy4t82/images/stencil/1280x1280/products/152653/369560/71YlbkPgSNL._SL1500___75954.1672047073.jpg?c=1&imbypass=on" alt="Perfume Oil"></div><div class="prod-body"><div class="prod-name">Arabian Perfume Oil</div><div class="prod-desc">Concentrated long-lasting attar</div><div class="prod-price-row"><span class="prod-price">₹1,699</span><span class="prod-old">₹2,199</span></div><button class="add-btn" onclick="cart('Arabian Perfume Oil')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-new">New</span><div class="prod-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNzNcB7NAEgfYtb8R2aNBDE7ynctY3eTC6Fg&s" alt="Discovery Set"></div><div class="prod-body"><div class="prod-name">Discovery Mini Set</div><div class="prod-desc">5 bestsellers in travel size</div><div class="prod-price-row"><span class="prod-price">₹1,199</span><span class="prod-old">₹1,999</span></div><button class="add-btn" onclick="cart('Discovery Mini Set')">Add to Cart</button></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://m.media-amazon.com/images/I/81PqAkuM+ZL._AC_UF350,350_QL80_.jpg" alt="Cherry Blossom"></div><div class="prod-body"><div class="prod-name">Cherry Blossom</div><div class="prod-desc">Light floral spring scent</div><div class="prod-price-row"><span class="prod-price">₹699</span></div><button class="add-btn" onclick="cart('Cherry Blossom')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-sale">Sale</span><div class="prod-img"><img src="https://cdn.faire.com/fastly/3a9fe80a7b2740a8d4e8b98f330f7f8a278edf9ee3687c2d6fb50613ca1c75ee.jpeg?bg-color=FFFFFF&dpr=1&fit=crop&format=jpg&height=720&width=720" alt="Vanilla Dream"></div><div class="prod-body"><div class="prod-name">Vanilla Dream EDP</div><div class="prod-desc">Warm sweet gourmand scent</div><div class="prod-price-row"><span class="prod-price">₹1,099</span><span class="prod-old">₹1,599</span></div><button class="add-btn" onclick="cart('Vanilla Dream EDP')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-new">New</span><div class="prod-img"><img src="https://m.media-amazon.com/images/I/61i83SL19FL.jpg" alt="Aqua Fresh"></div><div class="prod-body"><div class="prod-name">Aqua Marine EDT</div><div class="prod-desc">Cool ocean breeze accord</div><div class="prod-price-row"><span class="prod-price">₹849</span></div><button class="add-btn" onclick="cart('Aqua Marine EDT')">Add to Cart</button></div></div>
+      <div class="prod-card"><span class="prod-badge badge-luxe">💎 Luxe</span><div class="prod-img"><img src="https://fragstalk.in/wp-content/uploads/2024/01/Oud-Rose-perfume.png" alt="Oud Rose"></div><div class="prod-body"><div class="prod-name">Oud & Rose Extrait</div><div class="prod-desc">Ultimate luxury oriental blend</div><div class="prod-price-row"><span class="prod-price">₹3,499</span><span class="prod-old">₹4,999</span></div><button class="add-btn" onclick="cart('Oud Rose Extrait')">Add to Cart</button></div></div>
+    </div>
+  </div>
+
+<footer>
+  <div class="f-logo">Glamify</div>
+  <div class="f-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="f-copy">© 2026 Glamify Beauty ✨</div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+
+function filterCat(cat, btn) {
+
+  // Hide all sections
+  ['makeup','skincare','haircare','fragrance'].forEach(c => {
+    document.getElementById('ss-' + c).style.display =
+      (c === cat ? 'block' : 'none');
+  });
+
+  // Remove active class from all buttons
+  document.querySelectorAll('.filt').forEach(b => {
+    b.classList.remove('on');
+  });
+
+  // Add active class to clicked button
+  btn.classList.add('on');
+
+  syncWishButtons();
+}
+
+function cart(name) {
+  let btn = event.target;
+  let card = btn.closest('.prod-card');
+
+  let priceText = card.querySelector('.prod-price').innerText;
+  let price = parseInt(priceText.replace('₹', ''));
+
+  addToCart(name, price);
+}
+
+function getCart() {
+  return JSON.parse(localStorage.getItem('glamify_cart')) || [];
+}
+
+function getWishlist() {
+  return JSON.parse(localStorage.getItem('glamify_wishlist')) || [];
+}
+
+function saveCart(c) {
+  localStorage.setItem('glamify_cart', JSON.stringify(c));
+}
+
+function saveWish(w) {
+  localStorage.setItem('glamify_wishlist', JSON.stringify(w));
+}
+
+function showToast(msg) {
+  let t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+function addToCart(name, price) {
+  let cart = getCart();
+  let item = cart.find(p => p.name === name);
+
+  if (item) {
+    item.qty += 1;
+  } else {
+    cart.push({ name, price, qty: 1 });
+  }
+
+  saveCart(cart);
+  showToast("🛒 Added to cart: " + name);
+}
+
+function toggleWishlist(name, price, btn) {
+  let list = getWishlist();
+  let itemIndex = list.findIndex(p => p.name === name);
+
+  if (itemIndex !== -1) {
+    list.splice(itemIndex, 1);
+    btn.textContent = "♡";
+    showToast("Removed from wishlist");
+  } else {
+    list.push({ name, price });
+    btn.textContent = "♥";
+    showToast("Added to wishlist");
+  }
+
+  saveWish(list);
+}
+
+function initWishlistButtons() {
+  document.querySelectorAll('.prod-card').forEach(card => {
+
+    let name = card.querySelector('.prod-name')?.innerText;
+    let priceText = card.querySelector('.prod-price')?.innerText;
+    let price = priceText ? parseInt(priceText.replace('₹', '')) : 0;
+
+    let btn = document.createElement('button');
+    btn.innerHTML = "♡";
+    btn.className = "wish-btn";
+
+    btn.style.position = "absolute";
+    btn.style.top = "10px";
+    btn.style.right = "10px";
+    btn.style.border = "none";
+    btn.style.background = "white";
+    btn.style.padding = "6px 10px";
+    btn.style.borderRadius = "50%";
+    btn.style.cursor = "pointer";
+    btn.style.fontSize = "16px";
+
+    btn.onclick = () => {
+      toggleWishlist(name, price, btn);
+    };
+
+    card.style.position = "relative";
+    card.appendChild(btn);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  initWishlistButtons();
+});
+
+</script>
+
+</body>
+</html>

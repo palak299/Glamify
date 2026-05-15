@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glamify</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    text-align: center;
+    color: white;
+    z-index: 2;
+    max-width: 900px;
+}
+
+.logo {
+    font-size: 6.5rem;
+    font-weight: 900;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    animation: glow 2s infinite alternate;
+}
+
+.headline {
+    margin-top: 20px;
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 1.4;
+    opacity: 0;
+    animation: fadeUp 1.5s ease forwards;
+}
+
+.subtext {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    opacity: 0;
+    animation: fadeUp 2s ease forwards;
+}
+
+.btn {
+    margin-top: 40px;
+    padding: 15px 35px;
+    border: none;
+    background: white;
+    color: hotpink;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: hotpink;
+    color: white;
+    transform: scale(1.1);
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px white, 0 0 20px pink; }
+    to { text-shadow: 0 0 30px white, 0 0 60px hotpink; }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    animation: float 6s infinite ease-in-out;
+}
+
+.circle:nth-child(1) {
+    width: 180px;
+    height: 180px;
+    top: 10%;
+    left: 15%;
+}
+
+.circle:nth-child(2) {
+    width: 120px;
+    height: 120px;
+    bottom: 15%;
+    right: 20%;
+}
+
+.circle:nth-child(3) {
+    width: 90px;
+    height: 90px;
+    top: 70%;
+    left: 25%;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-40px); }
+    100% { transform: translateY(0); }  
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="logo">Glamify</div>
+
+    <div class="headline">
+        Elevate Your Beauty Experience <br>
+        With Personalized Elegance ✨
+    </div>
+
+    <div class="subtext">
+        Skincare and makeup tailored just for you.
+    </div>
+
+    <button class="btn" onclick="goNext()">
+        Explore Now →
+    </button>
+</div>
+
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+
+<script>
+function goNext() {
+    window.location.href = "ask.html";
+}
+</script>
+
+</body>
+</html>

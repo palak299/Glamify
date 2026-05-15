@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beauty Quiz</title>
+
+<style>
+*{margin:0;padding:0; box-sizing:border-box;font-family:sans-serif;}
+
+body{
+  background: linear-gradient(135deg,#ffdde1,#ee9ca7);
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.quiz-wrapper{
+  width:100%;
+  max-width:900px;
+  padding:20px;
+}
+
+.quiz-container{
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(15px);
+  border-radius:25px;
+  padding:30px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.2);
+}
+
+h1{
+  text-align:center;
+  margin-bottom:10px;
+  color:#a21a1a;
+}
+
+.subtitle{
+  text-align:center;
+  color:#680b0b;
+  margin-bottom:20px;
+}
+
+.question-card{
+  background:#fff;
+  padding:20px;
+  border-radius:15px;
+  margin-bottom:15px;
+  box-shadow:0 10px 20px rgba(0,0,0,0.1);
+}
+
+.options label{
+  display:block;
+  padding:10px;
+  margin:8px 0;
+  border-radius:10px;
+  border:1px solid #eee;
+  cursor:pointer;
+}
+
+.options label:hover{
+  background:#ffe4ec;
+}
+
+input[type="radio"]{
+  margin-right:8px;
+}
+
+button{
+  width:100%;
+  padding:14px;
+  margin-top:20px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(45deg,#ff4d6d,#ff758c);
+  color:#fff;
+  font-size:16px;
+}
+
+.result{
+  display:none;
+}
+
+.result-box{
+  background:#fff;
+  padding:25px;
+  border-radius:15px;
+  margin-top:20px;
+}
+
+.section{
+  margin-bottom:15px;
+}
+
+.section h4{
+  color:#ff4d6d;
+  margin-bottom:5px;
+}
+
+ul{
+  padding-left:20px;
+}
+
+#theme-toggle {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: #e8357a;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(232, 53, 122, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s, background 0.3s;
+}
+#theme-toggle:hover {
+  transform: scale(1.12) rotate(20deg);
+}
+
+html.dark {
+  --pink:   #ff6fa5;
+  --deep:   #ff4d8d;
+  --light:  #2a0a1a;
+  --cream:  #1a0010;
+  --dark:   #f5e6ed;
+  --muted:  #d4a0b8;
+  --border: rgba(255, 111, 165, 0.2);
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+html.dark body {
+  background: #120009;
+  color: #f0d8e8;
+}
+
+html.dark nav {
+  background: rgba(18, 0, 9, 0.96);
+  border-bottom: 1px solid rgba(255, 111, 165, 0.15);
+}
+html.dark .nav-link        { color: #d4a0b8; }
+html.dark .nav-link:hover,
+html.dark .nav-link.active { color: #ff6fa5; background: #2a0a1a; }
+html.dark .logo            { color: #ff6fa5; }
+
+html.dark .hero {
+  background: linear-gradient(135deg, #1a0010 0%, #200015 50%, #180010 100%);
+}
+html.dark .hero h1       { color: #f0d8e8; }
+html.dark .hero-desc     { color: #c090aa; }
+html.dark .hero-tag      { background: #2a0a1a; border-color: rgba(255,111,165,0.2); }
+html.dark .float-pill    { background: #2a0a1a; box-shadow: 0 12px 40px rgba(0,0,0,0.5); }
+html.dark .fp-label      { color: #8a5070; }
+html.dark .fp-sub        { color: #6a3050; }
+
+
+html.dark .section,
+html.dark section[style*="background:#fff"] {
+  background: #180010 !important;
+}
+html.dark .bs-section     { background: #1a0010; }
+html.dark .section-title  { color: #f0d8e8; }
+
+html.dark .prod-card {
+  background: #220015;
+  border-color: rgba(255, 111, 165, 0.12);
+}
+html.dark .prod-card:hover {
+  border-color: rgba(255, 111, 165, 0.35);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.5);
+}
+html.dark .prod-name  { color: #f0d8e8; }
+html.dark .prod-desc  { color: #8a5070; }
+html.dark .prod-img   { background: #2a0a1a; }
+
+html.dark .cat-card {
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+}
+
+html.dark .acard {
+  background: #220015;
+  border-color: rgba(255, 111, 165, 0.1);
+}
+html.dark .acard p { color: #c090aa; }
+
+html.dark .vcard {
+  background: #2a0a1a;
+}
+html.dark .vcard p { color: #c090aa; }
+
+html.dark .reviews-section {
+  background: linear-gradient(135deg, #180010, #200015);
+}
+html.dark .review-card {
+  background: #220015;
+  border-color: rgba(255, 111, 165, 0.12);
+}
+html.dark .review-card.featured {
+  background: linear-gradient(135deg, #2a0a1a, #400025);
+}
+html.dark .review-text   { color: #c090aa; }
+html.dark .review-name   { color: #f0d8e8; }
+
+
+html.dark .about-top {
+  background: linear-gradient(135deg, #180010, #220015);
+}
+html.dark .about-top h1 { color: #f0d8e8; }
+html.dark .about-top p  { color: #c090aa; }
+
+html.dark .contact-page {
+  background: linear-gradient(135deg, #180010, #200015);
+}
+html.dark .contact-box {
+  background: #220015;
+  border-color: rgba(255, 111, 165, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+html.dark .contact-box h1   { color: #f0d8e8; }
+html.dark .contact-sub      { color: #c090aa; }
+html.dark .form-field input,
+html.dark .form-field textarea {
+  background: #2a0a1a;
+  border-color: rgba(255,111,165,0.2);
+  color: #f0d8e8;
+}
+html.dark .form-field input::placeholder,
+html.dark .form-field textarea::placeholder { color: #6a3050; }
+html.dark .form-field input:focus,
+html.dark .form-field textarea:focus {
+  background: #300018;
+  border-color: #ff6fa5;
+}
+html.dark .ci-card {
+  background: #2a0a1a;
+}
+html.dark .ci-card h4 { color: #ff6fa5; }
+html.dark .ci-card p  { color: #c090aa; }
+
+
+html.dark .shop-top {
+  background: linear-gradient(135deg, #180010, #220015);
+}
+html.dark .shop-top h1  { color: #f0d8e8; }
+html.dark .shop-top p   { color: #c090aa; }
+html.dark .shop-cat-title { color: #f0d8e8; border-color: #2a0a1a; }
+html.dark .filt {
+  background: #220015;
+  color: #c090aa;
+  border-color: rgba(255,111,165,0.2);
+}
+html.dark .filt:hover { color: #ff6fa5; border-color: #ff6fa5; }
+html.dark .filt.on    { background: #ff6fa5; color: white; border-color: #ff6fa5; }
+
+html.dark .cart-page h1    { color: #f0d8e8; }
+html.dark .cart-item {
+  background: #220015;
+  border-color: rgba(255,111,165,0.1);
+}
+html.dark .ci-name   { color: #f0d8e8; }
+html.dark .ci-price  { color: #c090aa; }
+html.dark #cart-summary {
+  background: #220015;
+  border-color: rgba(255,111,165,0.1);
+}
+html.dark .timer-banner { background: linear-gradient(135deg,#2a0a1a,#400025); }
+html.dark .promo-input {
+  background: #2a0a1a; color: #f0d8e8;
+  border-color: rgba(255,111,165,0.2);
+}
+
+html.dark .wish-page h1 { color: #f0d8e8; }
+html.dark .card {
+  background: #220015;
+  border-color: rgba(255,111,165,0.1);
+}
+html.dark .name { color: #f0d8e8; }
+
+
+html.dark .faq-section { background: linear-gradient(135deg,#180010,#220015); }
+html.dark .faq-item    { background: #220015; box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
+html.dark .faq-question { color: #f0d8e8; }
+html.dark .faq-answer  { color: #c090aa; }
+
+
+html.dark footer { background: #0a0006; }
+
+
+html.dark .perks { background: #180010; border-color: rgba(255,111,165,0.1); }
+html.dark .perk  { border-color: rgba(255,111,165,0.1); }
+html.dark .perk-text h4 { color: #f0d8e8; }
+html.dark .perk-text p  { color: #c090aa; }
+
+
+html.dark .search-box   { background: #220015; }
+html.dark #search-inp   { background: #2a0a1a; color: #f0d8e8; border-color: rgba(255,111,165,0.2); }
+html.dark .sr-card      { background: #2a0a1a; border-color: rgba(255,111,165,0.15); }
+html.dark .sr-name      { color: #f0d8e8; }
+
+
+html.dark .login-container,
+html.dark .container {
+  background: #220015;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+html.dark .login-container h2,
+html.dark .container h1 { color: #f0d8e8; }
+html.dark .login-container input,
+html.dark .container input,
+html.dark .container select,
+html.dark .container textarea {
+  background: #2a0a1a;
+  border-color: rgba(255,111,165,0.2);
+  color: #f0d8e8;
+}
+html.dark .container label { color: #c090aa; }
+
+
+html.dark .question-card  { background: #220015; }
+html.dark .question-card h3 { color: #f0d8e8; }
+html.dark .options label  { border-color: rgba(255,111,165,0.2); color: #c090aa; }
+html.dark .options label:hover { background: #2a0a1a; }
+html.dark .result-box     { background: #220015; color: #f0d8e8; }
+
+body, nav, .prod-card, .acard, .vcard, .review-card,
+.faq-item, .cart-item, .card, .contact-box, .search-box,
+.ci-card, .filt, footer, .perks, .perk {
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+</style>
+</head>
+
+<body>
+
+<div class="quiz-wrapper">
+<div class="quiz-container">
+
+<h1>✨ Beauty Routine Quiz</h1>
+<p class="subtitle">Get your personalized routine</p>
+
+<form id="quizForm">
+
+<div class="question-card">
+<h3>1. Skin type?</h3>
+<div class="options">
+<label><input type="radio" name="q1" value="dry"> Dry</label>
+<label><input type="radio" name="q1" value="oily"> Oily</label>
+<label><input type="radio" name="q1" value="combination"> Combination</label>
+</div>
+</div>
+
+<div class="question-card">
+<h3>2. Main concern?</h3>
+<div class="options">
+<label><input type="radio" name="q2" value="acne"> Acne</label>
+<label><input type="radio" name="q2" value="dull"> Dullness</label>
+<label><input type="radio" name="q2" value="spots"> Dark Spots</label>
+</div>
+</div>
+
+<div class="question-card">
+<h3>3. Hair concern?</h3>
+<div class="options">
+<label><input type="radio" name="q3" value="hairfall"> Hair Fall</label>
+<label><input type="radio" name="q3" value="dandruff"> Dandruff</label>
+<label><input type="radio" name="q3" value="dryhair"> Dry Hair</label>
+</div>
+</div>
+
+<div class="question-card">
+<h3>4. Sun exposure?</h3>
+<div class="options">
+<label><input type="radio" name="q4" value="low"> Low</label>
+<label><input type="radio" name="q4" value="medium"> Medium</label>
+<label><input type="radio" name="q4" value="high"> High</label>
+</div>
+</div>
+
+<div class="question-card">
+<h3>5. Water intake?</h3>
+<div class="options">
+<label><input type="radio" name="q5" value="low"> Low</label>
+<label><input type="radio" name="q5" value="good"> Good</label>
+<label><input type="radio" name="q5" value="high"> High</label>
+</div>
+</div>
+
+<div class="question-card">
+<h3>6. Do you follow skincare?</h3>
+<div class="options">
+<label><input type="radio" name="q6" value="yes"> Yes</label>
+<label><input type="radio" name="q6" value="no"> No</label>
+</div>
+</div>
+
+<div class="question-card">
+<h3>7. Sleep hours?</h3>
+<div class="options">
+<label><input type="radio" name="q7" value="low"> Less than 6 hrs</label>
+<label><input type="radio" name="q7" value="good"> 6-8 hrs</label>
+<label><input type="radio" name="q7" value="high"> More than 8 hrs</label>
+</div>
+</div>
+
+<div class="question-card">
+<h3>8. Diet type?</h3>
+<div class="options">
+<label><input type="radio" name="q8" value="junk"> Mostly Junk Food</label>
+<label><input type="radio" name="q8" value="balanced"> Balanced Diet</label>
+<label><input type="radio" name="q8" value="healthy"> Very Healthy</label>
+</div>
+</div>
+
+<button type="button" onclick="showResult()">Get My Routine 💖</button>
+
+</form>
+
+<div class="result" id="result">
+<h2>✨ Your Routine</h2>
+
+<div class="result-box">
+
+<div class="section">
+<h4>🛍️ Products</h4>
+<ul id="products"></ul>
+</div>
+
+<div class="section">
+<h4>💧 Ingredients</h4>
+<ul id="ingredients"></ul>
+</div>
+
+<div class="section">
+<h4>🌿 Tips</h4>
+<ul id="tips"></ul>
+</div>
+
+<button onclick="goHome()">Explore More →</button>
+</div>
+</div>
+
+</div>
+</div>
+
+<script>
+function showResult(){
+
+let skin = document.querySelector('input[name="q1"]:checked')?.value;
+let concern = document.querySelector('input[name="q2"]:checked')?.value;
+let hair = document.querySelector('input[name="q3"]:checked')?.value;
+let sun = document.querySelector('input[name="q4"]:checked')?.value;
+let water = document.querySelector('input[name="q5"]:checked')?.value;
+let routine = document.querySelector('input[name="q6"]:checked')?.value;
+let sleep = document.querySelector('input[name="q7"]:checked')?.value;
+let diet = document.querySelector('input[name="q8"]:checked')?.value;
+
+let ingList = document.getElementById("ingredients");
+let prodList = document.getElementById("products");
+let tipList = document.getElementById("tips");
+
+ingList.innerHTML="";
+prodList.innerHTML="";
+tipList.innerHTML="";
+
+function addItem(list, text){
+  let li=document.createElement("li");
+  li.innerText=text;
+  list.appendChild(li);
+}
+
+
+if(skin==="dry"){ addItem(ingList,"Hyaluronic Acid"); addItem(prodList,"Moisturizer"); addItem(tipList,"Use gentle hydrating cleansers"); }
+if(skin==="oily"){ addItem(ingList,"Niacinamide"); addItem(prodList,"Oil Control Face Wash"); addItem(tipList,"Avoid over-washing your face"); }
+
+if(concern==="acne"){ addItem(ingList,"Salicylic Acid"); addItem(prodList,"Acne Serum"); addItem(tipList,"Do not touch or pop pimples"); }
+
+if(sun==="high"){ addItem(prodList,"Sunscreen SPF 50"); addItem(tipList,"Apply sunscreen every 3-4 hours"); }
+
+if(water==="low"){ addItem(tipList,"Drink at least 7-8 glasses of water daily"); }
+
+if(sleep==="low"){ addItem(tipList,"Improve sleep for better skin recovery"); }
+
+if(diet==="junk"){ addItem(tipList,"Reduce oily and processed foods"); }
+
+if(routine==="no"){ addItem(tipList,"Start with basic CTM routine (Cleanse, Tone, Moisturize)"); }
+
+document.getElementById("quizForm").style.display="none";
+document.getElementById("result").style.display="block";
+}
+
+function goHome() {
+    window.location.href = "index.html";
+}
+
+(function () {
+  if (localStorage.getItem("glamify_theme") === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+})();
+document.addEventListener("DOMContentLoaded", function () {
+  createToggleBtn();
+  applyTheme();
+});
+function createToggleBtn() {
+  let btn = document.createElement("button");
+  btn.id = "theme-toggle";
+  btn.title = "Toggle Dark / Light Mode";
+  btn.innerHTML = getIcon();
+  btn.addEventListener("click", toggleTheme);
+  document.body.appendChild(btn);
+}
+function getIcon() {
+  return localStorage.getItem("glamify_theme") === "dark" ? "☀️" : "🌙";
+}
+function toggleTheme() {
+  let isDark = document.documentElement.classList.toggle("dark");
+  localStorage.setItem("glamify_theme", isDark ? "dark" : "light");
+  let btn = document.getElementById("theme-toggle");
+  if (btn) btn.innerHTML = isDark ? "☀️" : "🌙";
+}
+function applyTheme() {
+  let btn = document.getElementById("theme-toggle");
+  if (!btn) return;
+  btn.innerHTML = getIcon();
+}
+</script>
+
+</body>
+</html>
